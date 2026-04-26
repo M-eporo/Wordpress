@@ -1,0 +1,64 @@
+現在の投稿関連
+$post	        現在処理している投稿のオブジェクト（WP_Postクラス）。
+利用例:         $post->ID で現在の投稿IDを取得。
+$posts	        一部のコア関数で使用される変数。現在のクエリ結果を保持する場合があるが、一般的には $wp_query->posts を使用する。
+$authordata	    現在の投稿の投稿者に関する情報（WP_Userオブジェクト）。
+利用例:         $authordata->display_name で投稿者の表示名を取得。
+
+投稿の日時とページ分割関連
+$currentday	    現在の投稿が公開された日（例: 05）。
+$currentmonth	在の投稿が公開された月（例: 12）。
+$page	        現在表示しているページ番号。投稿内で分割されたページを識別するために使用。
+$pages	        投稿が複数ページに分割されている場合、各ページのコンテンツを格納した配列。
+$multipage	    投稿が複数ページに分割されているかどうかを示すフラグ（true または false）。
+$more	        投稿内の <!--more--> タグを有効にするかどうかを制御するフラグ。
+$numpages	    現在の投稿が持つページの総数。
+
+サイト全体で利用される変数
+$super_admins	サイト管理者（マルチサイト用）のユーザーIDを格納した配列。
+$wp_query	    現在のクエリを保持する WP_Query クラスのインスタンス。テンプレート内で条件分岐に使う（例: $wp_query->is_home）。
+$wpdb	        データベース操作用クラス（wpdb）。SQLクエリの実行やテーブル操作に使用。
+$wp_rewrite	    URLリライトルールを管理するクラスインスタンス。カスタムリライトルール作成時に使用。
+$wp_locale	    現在のロケール（地域設定）に関する情報を保持するクラスインスタンス。日付や時刻の形式を制御。
+$wp_admin_bar	管理バー（管理者ツールバー）に関する情報を管理する WP_Admin_Bar オブジェクト。
+$wp_roles	    すべてのユーザーロールを格納する WP_Roles クラスのインスタンス。
+$wp_meta_boxes	管理画面のメタボックス（カスタムボックス）の情報を格納する配列。
+
+現在のブラウザを特定するための変数
+$is_iphone	    iPhoneのSafariブラウザを使用中か。
+$is_chrome	    Google Chromeを使用中か。
+$is_safari	    Safariブラウザを使用中か。
+$is_gecko	    Firefoxを使用中か（Geckoベースのブラウザ）。
+$is_IE	        Internet Explorerを使用中か。
+$is_edge	    Microsoft Edgeを使用中か。
+
+WordPressが動作しているサーバーを特定するための変数
+$is_apache	    Apacheサーバー上で動作しているか。
+$is_IIS	        Microsoft IIS（Internet Information Services）で動作しているか。
+$is_iis7	    IISバージョン7.xで動作しているか。
+$is_nginx	    Nginxサーバー上で動作しているか
+
+WordPressや関連 ソフトウェアのバージョンを確認するための変数
+$wp_version	                現在インストールされているWordPressのバージョン（例: 6.4）。
+$wp_db_version	            WordPressデータベースのバージョン番号。アップデート時の確認に使用。
+$tinymce_version	        インストールされているTinyMCEエディターのバージョン。
+$manifest_version	        キャッシュマニフェストのバージョン番号。
+$required_php_version	    現在のWordPressに必要なPHPのバージョン。
+$required_mysql_version	    現在のWordPressに必要なMySQLのバージョン。
+
+管理画面専用の変数 (Admin Globals)
+$pagenow	                        現在表示している管理画面のページ名（例: post.php, edit.php）。
+$post_type	                        現在の投稿タイプ（例: post, page, custom_post_type）。
+$allowedposttags / $allowedtags	    投稿コンテンツで許可されるHTMLタグのリストを格納した配列。
+$menu	                            管理画面のメニュー構造を格納した配列。
+
+そのほか便利なグローバル変数
+$query_string	        現在のクエリ文字列を含む文字列。
+$table_prefix	        WordPressのデータベーステーブルのプレフィックス。デフォルトは wp_。
+$template	            現在使用されているテンプレートファイルのパス。
+$wp_ scripts	        登録された スクリプトのリストを管理する WP_Scripts クラスのインスタンス。
+$wp_styles	            登録されたスタイルのリストを管理する WP_Styles クラスのインスタンス。
+$current_user	        現在ログインしているユーザーのデータを含むオブジェクト。
+例: $current_user->user_login でユーザー名を取得。
+$user_ID	            現在のユーザーのID（古い方法）。$current_userを使用するのが推奨されます。
+$wp_theme_directories	テーマが保存されているディレクトリのリスト。
